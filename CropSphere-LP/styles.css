@@ -1,0 +1,407 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: none; /* Quitar el borde si no es necesario */
+    border-radius: 5px;
+    width: auto; /* Cambiado de 25rem para permitir el ajuste automático */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alineación central de los elementos internos */
+}
+.close {
+    align-self: flex-end;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+/* Estilo adicional para centrar el botón en la página */
+body {
+    margin: 0;
+}
+.navbar-brand img {
+  height: 50px; /* Ajusta esto según tus necesidades */
+  width: auto; /* Esto mantendrá las proporciones de tu imagen */
+}
+
+
+#home {
+    background: url('images/home-image.png') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    position: relative; /* Asegúrate de que el home sea relativo para que el overlay funcione correctamente */
+}
+
+/* Sombreado (overlay) */
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Sombreado negro con transparencia */
+    z-index: 1;
+}
+
+/* Contenido de la sección */
+#home .container {
+    position: relative;
+    z-index: 2; /* Para asegurarse de que el texto esté sobre el overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centrado horizontal */
+    height: 100%;
+}
+#about .vision-mission {
+  background-color: #f8f9fa; /* Cambia este color de fondo según sea necesario */
+  padding: 40px 0; /* Ajusta el padding para controlar el espacio vertical */
+}
+
+#about .vision-mission .container {
+  padding: 0 15px; /* Ajusta el padding lateral del contenedor si es necesario */
+}
+
+#about .vision-mission .section-title {
+  font-size: 1.5rem; /* Ajusta el tamaño del texto del título */
+  font-weight: 700; /* Peso de la fuente para títulos */
+  margin-bottom: 15px; /* Espacio debajo de los títulos */
+  color: #333; /* Color del texto para los títulos */
+}
+
+#about .vision-mission .section-text {
+  font-size: 1rem; /* Ajusta el tamaño del texto del párrafo */
+  color: #555; /* Color del texto para el párrafo */
+  margin-bottom: 0; /* Si necesitas espacio debajo del párrafo, ajusta aquí */
+}
+
+#about .vision-mission .col-md-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* Asegúrate de que los estilos no entren en conflicto con otros estilos de tu CSS */
+
+
+/* Asegúrate de que no hay conflictos con otros estilos en tu CSS. */
+
+#services {
+    background: #ffffff;
+    padding: 50px 0;
+}
+
+#services h2 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+#services .lead {
+    color: #555;
+    margin-bottom: 50px;
+}
+
+#services h5 {
+    color: #333;
+    margin-top: 20px;
+}
+
+#services p {
+    color: #666;
+}
+#services img { /* Ajusta esto para tus íconos personalizados */
+    height: 50px; /* O el tamaño que prefieras */
+    margin-bottom: 20px; /* Espacio debajo del ícono */
+}
+
+@media (min-width: 992px) {
+    #services .img-fluid {
+        max-width: 80%;
+        margin-top: -50px;
+    }   
+}
+@media screen and (max-width: 768px) {
+  .navbar-collapse {
+    display: none;
+  }
+}
+#login {
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  #register {
+    border: none;
+    width: 137px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  /* Personalizar el fondo de la sección de contacto */
+#contact .bg-dark {
+  background-color: #012b29 !important; /* Nuevo color verde oscuro para el fondo */
+}
+
+/* Personalizar el color del texto dentro de la sección de contacto */
+#contact .text-white {
+  color: #f1b22a !important; /* Nuevo color amarillo para el texto */
+}
+
+/* Personalización de los campos del formulario y etiquetas */
+#contact .form-label {
+  color: #f1b22a !important; /* Asegura que las etiquetas tengan el nuevo color de texto */
+}
+
+#contact .form-control {
+  background-color: #f0f0f0;
+  border: 1px solid #cccccc;
+  color: #333; /* Color oscuro para el texto del formulario para mejorar la legibilidad */
+}
+
+#contact .form-control:focus {
+  border-color: #f1b22a; /* Color del borde al enfocar en los campos del formulario */
+  box-shadow: 0 0 0 0.2rem rgba(241, 178, 42, 0.25); /* Sombra ligera para resaltar el campo activo */
+}
+
+/* Estilos para el botón de contacto */
+#contact .btn-primary {
+  background-color: #f1b22a; /* Color de fondo para el botón */
+  border-color: #f1b22a; /* Color del borde del botón */
+  color: #012b29; /* Color de texto del botón */
+}
+
+#contact .btn-primary:hover,
+#contact .btn-primary:focus {
+  background-color: #e8a022; /* Color de fondo más oscuro al pasar el mouse y enfocar */
+  border-color: #e8a022; /* Color del borde más oscuro */
+  color: #012b29; /* Mantiene el color de texto */
+}
+
+
+#subscription-plans .subscription-card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff; /* Mantenemos el fondo blanco para la tarjeta */
+  transition: all 0.3s ease-in-out;
+}
+
+#subscription-plans .subscription-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Actualizando el header de la tarjeta para incorporar el nuevo color */
+#subscription-plans .card-header {
+  background: #012b29; /* Nuevo color verde para el fondo del encabezado */
+  color: #f1b22a; /* Nuevo color amarillo para el texto */
+}
+
+#subscription-plans .card-body {
+  padding: 2rem;
+}
+
+/* Actualización del precio para usar el color verde como fondo y amarillo para el texto */
+#subscription-plans .price {
+  font-size: 2rem;
+  color: #012b29; /* Cambiamos el color del texto a verde */
+  background-color: #f1b22a; /* Fondo amarillo para resaltar el precio */
+  padding: 0.5rem 1rem; /* Agregamos algo de padding */
+  border-radius: 5px; /* Suavizamos los bordes */
+  display: inline-block; /* Aseguramos que el bloque del precio se ajuste al contenido */
+  margin: 1rem 0;
+}
+
+#subscription-plans .card-footer {
+  background-color: transparent;
+  border-top: none;
+}
+
+/* Ajustes en los botones para combinar con el nuevo esquema de color */
+#subscription-plans .btn-primary {
+  color: #012b29; /* Color de texto verde oscuro para contraste */
+  background-color: #f1b22a; /* Fondo amarillo */
+  border-color: #f1b22a; /* Borde del mismo color que el fondo */
+}
+
+#subscription-plans .btn-primary:hover {
+  background-color: #e8a022; /* Un tono de amarillo más oscuro para el hover */
+  border-color: #e8a022;
+}
+
+  
+
+  @media (max-width: 768px) {
+    #subscription-plans .subscription-card {
+      margin-bottom: 2rem; 
+    }
+  }
+  
+#searchButton img {
+    height: 20px; 
+    width: auto;
+}
+.search-modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.search-modal-content {
+    width: 100%; 
+    max-width: 600px; 
+}
+
+.close-search {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.search-input-group {
+    position: relative; 
+}
+.search-input-group input {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.5rem; 
+    border-radius: 0; 
+    background: #333; 
+    color: #fff; 
+}
+
+.search-input-group button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+.btn-search {
+    padding: 10px 20px;
+    font-size: 20px; 
+}
+/* Estilo base para el footer */
+footer {
+  background-color: #012b29; /* Fondo verde oscuro */
+  color: #f1b22a; /* Texto en amarillo */
+  padding: 2rem 0; /* Añade padding para más espacio */
+  text-align: center; /* Centra el texto */
+}
+
+/* Estilos para los enlaces en el footer */
+footer a {
+  color: #f1b22a; /* Color de texto de los enlaces */
+  text-decoration: none; /* Remueve el subrayado por defecto */
+}
+
+/* Estilos para el hover de los enlaces */
+footer a:hover,
+footer a:focus {
+  color: #ffffff; /* Cambia el color a blanco para el hover y el focus */
+  text-decoration: underline; /* Añade subrayado para resaltar */
+}
+
+/* Ajustes para los íconos de redes sociales */
+.LogFooter {
+  width: 40px; /* Ajusta el tamaño según necesites */
+  height: auto; /* Mantiene la proporción de los íconos */
+  margin: 0 10px; /* Espaciado alrededor de los íconos */
+}
+
+/* Estilo para la barra horizontal */
+footer hr {
+  border-color: #f1b22a; /* Hace que la línea sea del mismo color amarillo */
+  margin-top: 2rem; /* Espacio antes de la línea */
+  margin-bottom: 2rem; /* Espacio después de la línea */
+}
+
+/* Ajustes para la navegación */
+.nav {
+  padding-bottom: 1rem; /* Espacio adicional si es necesario */
+}
+
+.iconosFooter{
+    display: flex;
+    justify-content: center;
+}
+.LogFooter{
+    width: 60px;
+    display: inline-block;
+    color: #fff;
+    justify-content: space-evenly;
+    padding: 15px 10px;
+
+}
+hr{
+border: 1px solid #fff;
+width: 100%;
+
+}
+/* Personalización del color de fondo de la Navbar */
+.navbar {
+  background-color: #012b29 !important; /* Aplica el color de fondo deseado */
+}
+
+/* Personalizar el color y el estilo de los enlaces de la navbar */
+.navbar-light .navbar-nav .nav-link {
+  color: #ecb42d; /* Cambia este color si necesitas más contraste */
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+  color: rgba(255, 255, 255, 0.75); /* Color más claro para el hover */
+}
+
+/* Estilo para el logotipo y la marca de la navbar para que destaquen sobre el nuevo color de fondo */
+.navbar-brand {
+  color: #ecb42d; /* Ajusta el color según tu preferencia */
+}
+
+/* Estilos para el botón toggler en pantallas más pequeñas */
+.navbar-light .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.1); /* Borde del botón */
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Icono del botón con mejor contraste */
+}
+
+/* Estilos adicionales para el contenedor fluido para mantener un padding adecuado */
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+
